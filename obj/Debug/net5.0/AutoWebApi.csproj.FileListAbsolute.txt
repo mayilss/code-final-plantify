@@ -64,3 +64,6 @@ D:\Code-Academy\auto-final\AutoWebApi\obj\Debug\net5.0\AutoWebApi.dll
 D:\Code-Academy\auto-final\AutoWebApi\obj\Debug\net5.0\ref\AutoWebApi.dll
 D:\Code-Academy\auto-final\AutoWebApi\obj\Debug\net5.0\AutoWebApi.pdb
 D:\Code-Academy\auto-final\AutoWebApi\obj\Debug\net5.0\AutoWebApi.genruntimeconfig.cache
+D:\Code-Academy\auto-final\AutoWebApi\bin\Debug\net5.0\Microsoft.AspNetCore.JsonPatch.dll
+D:\Code-Academy\auto-final\AutoWebApi\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+D:\Code-Academy\auto-final\AutoWebApi\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll

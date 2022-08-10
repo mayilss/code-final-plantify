@@ -38,22 +38,6 @@ namespace AutoWebApi.Controllers
             }
             return Ok(fuelType);
         }
-        // api/fueltypes/fueltypescars/{id}
-        [HttpGet("[action]/{id}")]
-        public async Task<IActionResult> FuelTypesCars(int id)
-        {
-            var fuelType = await db.FuelTypes.FindAsync(id);
-            if (fuelType == null)
-            {
-                return NotFound("No fuel type found with this id!");
-            }
-            if (fuelType.Cars == null)
-            {
-                return NotFound("No cars found with this fuel type!");
-            }
-            var fuelTypesCars = await db.FuelTypes.Where(m => m.Id == id).Include(c => c.Cars).ToListAsync();
-            return Ok(fuelTypesCars);
-        }
         // api/fueltypes
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] FuelType fuelType)

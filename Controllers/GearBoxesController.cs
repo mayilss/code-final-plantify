@@ -38,22 +38,6 @@ namespace AutoWebApi.Controllers
             }
             return Ok(gearBox);
         }
-        // api/gearboxes/gearboxescars/{id}
-        [HttpGet("[action]/{id}")]
-        public async Task<IActionResult> GearBoxesCars(int id)
-        {
-            var gearBox = await db.GearBoxes.FindAsync(id);
-            if (gearBox == null)
-            {
-                return NotFound("No gear box found with this id!");
-            }
-            if (gearBox.Cars == null)
-            {
-                return NotFound("No cars found with this gear box!");
-            }
-            var gearBoxsCars = await db.GearBoxes.Where(m => m.Id == id).Include(c => c.Cars).ToListAsync();
-            return Ok(gearBoxsCars);
-        }
         // api/gearboxes
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] GearBox gearBox)

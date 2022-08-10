@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AutoWebApi.Migrations
 {
     [DbContext(typeof(AutoDbContext))]
-    [Migration("20220810064954_CarEngineMileageAdded")]
-    partial class CarEngineMileageAdded
+    [Migration("20220810070653_Init")]
+    partial class Init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -44,37 +44,37 @@ namespace AutoWebApi.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("BodyStyleId")
+                    b.Property<int?>("BodyStyleId")
                         .HasColumnType("int");
 
-                    b.Property<int>("ColorId")
+                    b.Property<int?>("ColorId")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("CreatedDate")
+                    b.Property<DateTime?>("CreatedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("DrivetrainId")
+                    b.Property<int?>("DrivetrainId")
                         .HasColumnType("int");
 
                     b.Property<double>("Engine")
                         .HasColumnType("float");
 
-                    b.Property<int>("FuelTypeId")
+                    b.Property<int?>("FuelTypeId")
                         .HasColumnType("int");
 
-                    b.Property<int>("GearBoxId")
+                    b.Property<int?>("GearBoxId")
                         .HasColumnType("int");
 
                     b.Property<string>("ImageUrl")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("ManufacturerId")
+                    b.Property<int?>("ManufacturerId")
                         .HasColumnType("int");
 
                     b.Property<int>("Mileage")
                         .HasColumnType("int");
 
-                    b.Property<int>("ModelId")
+                    b.Property<int?>("ModelId")
                         .HasColumnType("int");
 
                     b.Property<int>("Price")
@@ -206,61 +206,33 @@ namespace AutoWebApi.Migrations
 
             modelBuilder.Entity("AutoWebApi.Models.Car", b =>
                 {
-                    b.HasOne("AutoWebApi.Models.BodyStyle", "BodyStyle")
+                    b.HasOne("AutoWebApi.Models.BodyStyle", null)
                         .WithMany("Cars")
-                        .HasForeignKey("BodyStyleId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("BodyStyleId");
 
-                    b.HasOne("AutoWebApi.Models.Color", "Color")
+                    b.HasOne("AutoWebApi.Models.Color", null)
                         .WithMany("Cars")
-                        .HasForeignKey("ColorId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("ColorId");
 
-                    b.HasOne("AutoWebApi.Models.Drivetrain", "Drivetrain")
+                    b.HasOne("AutoWebApi.Models.Drivetrain", null)
                         .WithMany("Cars")
-                        .HasForeignKey("DrivetrainId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("DrivetrainId");
 
-                    b.HasOne("AutoWebApi.Models.FuelType", "FuelType")
+                    b.HasOne("AutoWebApi.Models.FuelType", null)
                         .WithMany("Cars")
-                        .HasForeignKey("FuelTypeId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("FuelTypeId");
 
-                    b.HasOne("AutoWebApi.Models.GearBox", "GearBox")
+                    b.HasOne("AutoWebApi.Models.GearBox", null)
                         .WithMany("Cars")
-                        .HasForeignKey("GearBoxId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("GearBoxId");
 
-                    b.HasOne("AutoWebApi.Models.Manufacturer", "Manufacturer")
+                    b.HasOne("AutoWebApi.Models.Manufacturer", null)
                         .WithMany("Cars")
-                        .HasForeignKey("ManufacturerId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("ManufacturerId");
 
-                    b.HasOne("AutoWebApi.Models.Model", "Model")
+                    b.HasOne("AutoWebApi.Models.Model", null)
                         .WithMany("Cars")
-                        .HasForeignKey("ModelId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("BodyStyle");
-
-                    b.Navigation("Color");
-
-                    b.Navigation("Drivetrain");
-
-                    b.Navigation("FuelType");
-
-                    b.Navigation("GearBox");
-
-                    b.Navigation("Manufacturer");
-
-                    b.Navigation("Model");
+                        .HasForeignKey("ModelId");
                 });
 
             modelBuilder.Entity("AutoWebApi.Models.Model", b =>

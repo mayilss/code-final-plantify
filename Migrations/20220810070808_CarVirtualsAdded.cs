@@ -2,7 +2,7 @@
 
 namespace AutoWebApi.Migrations
 {
-    public partial class ModelChanged : Migration
+    public partial class CarVirtualsAdded : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace AutoWebApi.Controllers
@@ -21,24 +22,56 @@ namespace AutoWebApi.Controllers
         }
         // api/manufacturers
         [HttpGet]
-        public async Task<IActionResult> GetAllManufacturers()
+        public async Task<IActionResult> GetAllCars(int? pageNumber, int? pageSize)
         {
+            int currentPageNumber = pageNumber ?? 1;
+            int currentPageSize = pageSize ?? 16;
+            int pageCount = (int)Math.Ceiling((double)(db.Cars.ToArray().Length / pageSize));
+
             if (db.Cars == null)
             {
                 return NotFound("No cars found!");
             }
-            return Ok(await db.Cars.ToListAsync());
+            var cars = await (from car in db.Cars
+                              select new
+                              {
+                                Id = car.Id,
+                                Name = car.Manufacturer.Name + " " + car.Model.Name,
+                                Image = car.ImageUrl,
+                                Price = car.Price,
+                                Mileage = car.Mileage,
+                                Year = car.Year,
+                                PageCount = pageCount,
+
+                               }).ToListAsync();
+            return Ok(cars.Skip((currentPageNumber - 1) * currentPageSize).Take(currentPageSize));
         }
         // api/manufacturers/{id}
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetCar(int id)
+        public IActionResult GetCar(int id)
         {
-            var car = await db.Cars.FindAsync(id);
-            if (car == null)
+            //var car = await db.Cars.FindAsync(id);
+            var carObj = (from car in db.Cars
+                                where car.Id == id
+                                select new
+                                {
+                                    CarId = car.Id,
+                                    Name = car.Manufacturer.Name + " " + car.Model.Name,
+                                    Image = car.ImageUrl,
+                                    Price = car.Price,
+                                    Mileage = car.Mileage,
+                                    Year = car.Year,
+                                    BodyStyle = car.BodyStyle.Name,
+                                    Color = car.Color.Name,
+                                    Drivetrain = car.Drivetrain.Name,
+                                    FuelType = car.FuelType.Name,
+                                    GearBox = car.GearBox.Name,
+                                });
+            if (carObj == null)
             {
                 return NotFound("No car found with this id!");
             }
-            return Ok(car);
+            return Ok(carObj);
         }
         // api/manufacturers
         [HttpPost]
@@ -86,6 +119,37 @@ namespace AutoWebApi.Controllers
             db.Cars.Remove(car);
             await db.SaveChangesAsync();
             return Ok("Car successfully deleted!");
+        }
+        [HttpGet("[action]")]
+        public async Task<IActionResult> Filter(int? gearboxId, int? fueltypeId, int? bodystyleId)
+        {
+            if (db.Cars == null)
+            {
+                return NotFound("No cars found!");
+            }
+            var cars = await (from car in db.Cars
+                              where car.GearBoxId == gearboxId && car.FuelTypeId == fueltypeId && car.BodyStyleId == bodystyleId ||
+                              car.BodyStyleId == bodystyleId && car.FuelTypeId == fueltypeId ||
+                              car.BodyStyleId == bodystyleId && car.GearBoxId == gearboxId ||
+                              car.GearBoxId == gearboxId && car.FuelTypeId == fueltypeId ||
+                              car.FuelTypeId == fueltypeId ||
+                              car.BodyStyleId == bodystyleId ||
+                              car.GearBoxId == gearboxId
+                              select new
+                              {
+                                  Id = car.Id,
+                                  Name = car.Manufacturer.Name + " " + car.Model.Name,
+                                  Image = car.ImageUrl,
+                                  Price = car.Price,
+                                  Mileage = car.Mileage,
+                                  Year = car.Year,
+
+                              }).ToListAsync();
+            if(cars.Count == 0)
+            {
+                return NotFound();
+            }
+            return Ok(cars);
         }
     }
 }

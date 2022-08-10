@@ -26,34 +26,30 @@ namespace AutoWebApi.Controllers
             {
                 return NotFound("No body style found!");
             }
-            return Ok(await db.BodyStyles.ToListAsync());
+            var bodyStyles = await (from bodyStyle in db.BodyStyles
+                                    select new
+                                    {
+                                        Id = bodyStyle.Id,
+                                        Name = bodyStyle.Name,
+                                    }).ToListAsync();
+            return Ok(bodyStyles);
         }
         // api/bodystyles/{id}
         [HttpGet("{id}")]
         public async Task<IActionResult> GetBodyStyle(int id)
         {
-            var bodyStyle = await db.BodyStyles.FindAsync(id);
-            if (bodyStyle == null)
+            var bodyStyleObj = await (from bodyStyle in db.BodyStyles
+                                      where bodyStyle.Id == id
+                                    select new
+                                    {
+                                        Id = bodyStyle.Id,
+                                        Name = bodyStyle.Name,
+                                    }).ToListAsync();
+            if (bodyStyleObj == null)
             {
                 return NotFound("No body style found with this id!");
             }
-            return Ok(bodyStyle);
-        }
-        // api/bodystyles/bodystylecars/{id}
-        [HttpGet("[action]/{id}")]
-        public async Task<IActionResult> BodyStyleCars(int id)
-        {
-            var bodyStyle = await db.BodyStyles.FindAsync(id);
-            if (bodyStyle == null)
-            {
-                return NotFound("No body style found with this id!");
-            }
-            if (bodyStyle.Cars == null)
-            {
-                return NotFound("No cars found with this body style!");
-            }
-            var bodyStyleCars = await db.BodyStyles.Where(m => m.Id == id).Include(c => c.Cars).ToListAsync();
-            return Ok(bodyStyleCars);
+            return Ok(bodyStyleObj);
         }
         // api/bodystyles
         [HttpPost]

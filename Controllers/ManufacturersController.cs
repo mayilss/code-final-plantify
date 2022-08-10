@@ -62,16 +62,16 @@ namespace AutoWebApi.Controllers
         [HttpGet("[action]/{id}")]
         public async Task<IActionResult> ManufacturerCars(int id)
         {
-            var manufacturer = await db.Manufacturers.FindAsync(id);
-            if (manufacturer == null)
-            {
-                return NotFound("No manufacturer found with this id!");
-            }
-            if(manufacturer.Cars == null)
-            {
-                return NotFound("No cars found by this manufacturer!");
-            }
-            var manufacturerCars = await db.Manufacturers.Where(m => m.Id == id).Include(c => c.Cars).ToListAsync();
+            //var manufacturer = await db.Manufacturers.FindAsync(id);
+            //if (manufacturer == null)
+            //{
+            //    return NotFound("No manufacturer found with this id!");
+            //}
+            //if (manufacturer.Cars == null)
+            //{
+            //    return NotFound("No cars found by this manufacturer!");
+            //}
+            var manufacturerCars = await db.Cars.Where(c => c.ManufacturerId == id).ToListAsync();
             return Ok(manufacturerCars);
         }
         // api/manufacturers

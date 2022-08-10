@@ -38,22 +38,6 @@ namespace AutoWebApi.Controllers
             }
             return Ok(drivetrain);
         }
-        // api/drivetrains/drivetraincars/{id}
-        [HttpGet("[action]/{id}")]
-        public async Task<IActionResult> DrivetrainCars(int id)
-        {
-            var drivetrain = await db.Drivetrains.FindAsync(id);
-            if (drivetrain == null)
-            {
-                return NotFound("No drivetrain found with this id!");
-            }
-            if (drivetrain.Cars == null)
-            {
-                return NotFound("No cars found with this drivetrain!");
-            }
-            var drivetrainCars = await db.Drivetrains.Where(m => m.Id == id).Include(c => c.Cars).ToListAsync();
-            return Ok(drivetrainCars);
-        }
         // api/drivetrains
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] Drivetrain drivetrain)

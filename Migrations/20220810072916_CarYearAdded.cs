@@ -2,12 +2,12 @@
 
 namespace AutoWebApi.Migrations
 {
-    public partial class CarPriceColumnAdded : Migration
+    public partial class CarYearAdded : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.AddColumn<int>(
-                name: "Price",
+                name: "Year",
                 table: "Cars",
                 type: "int",
                 nullable: false,
@@ -17,7 +17,7 @@ namespace AutoWebApi.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropColumn(
-                name: "Price",
+                name: "Year",
                 table: "Cars");
         }
     }

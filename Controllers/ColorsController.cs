@@ -39,22 +39,6 @@ namespace AutoWebApi.Controllers
             }
             return Ok(color);
         }
-        // api/colors/colorcars/{id}
-        [HttpGet("[action]/{id}")]
-        public async Task<IActionResult> ColorCars(int id)
-        {
-            var color = await db.Colors.FindAsync(id);
-            if (color == null)
-            {
-                return NotFound("No color found with this id!");
-            }
-            if (color.Cars == null)
-            {
-                return NotFound("No cars found with this color!");
-            }
-            var colorCars = await db.BodyStyles.Where(m => m.Id == id).Include(c => c.Cars).ToListAsync();
-            return Ok(colorCars);
-        }
         // api/colors
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] Color color)
