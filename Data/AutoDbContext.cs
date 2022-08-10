@@ -18,7 +18,13 @@ namespace AutoWebApi.Data
             public DbSet<GearBox> GearBoxes { get; set; }
             public DbSet<Manufacturer> Manufacturers { get; set; }
             public DbSet<Model> Models{ get; set; }
-            public DbSet<Specification> Specifications { get; set; }
-
+        //protected override void OnModelCreating(ModelBuilder modelBuilder)
+        //{
+        //    base.OnModelCreating(modelBuilder);
+        //    modelBuilder.Entity<Car>(e =>
+        //    {
+        //        e.HasKey(k => new { k.ManufacturerId, k.ModelId });
+        //    });
+        //}
     }
 }

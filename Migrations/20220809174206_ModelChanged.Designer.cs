@@ -4,14 +4,16 @@ using AutoWebApi.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace AutoWebApi.Migrations
 {
     [DbContext(typeof(AutoDbContext))]
-    partial class AutoDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220809174206_ModelChanged")]
+    partial class ModelChanged
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -54,9 +56,6 @@ namespace AutoWebApi.Migrations
                     b.Property<int>("DrivetrainId")
                         .HasColumnType("int");
 
-                    b.Property<double>("Engine")
-                        .HasColumnType("float");
-
                     b.Property<int>("FuelTypeId")
                         .HasColumnType("int");
 
@@ -67,9 +66,6 @@ namespace AutoWebApi.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("ManufacturerId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Mileage")
                         .HasColumnType("int");
 
                     b.Property<int>("ModelId")
@@ -204,61 +200,47 @@ namespace AutoWebApi.Migrations
 
             modelBuilder.Entity("AutoWebApi.Models.Car", b =>
                 {
-                    b.HasOne("AutoWebApi.Models.BodyStyle", "BodyStyle")
+                    b.HasOne("AutoWebApi.Models.BodyStyle", null)
                         .WithMany("Cars")
                         .HasForeignKey("BodyStyleId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("AutoWebApi.Models.Color", "Color")
+                    b.HasOne("AutoWebApi.Models.Color", null)
                         .WithMany("Cars")
                         .HasForeignKey("ColorId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("AutoWebApi.Models.Drivetrain", "Drivetrain")
+                    b.HasOne("AutoWebApi.Models.Drivetrain", null)
                         .WithMany("Cars")
                         .HasForeignKey("DrivetrainId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("AutoWebApi.Models.FuelType", "FuelType")
+                    b.HasOne("AutoWebApi.Models.FuelType", null)
                         .WithMany("Cars")
                         .HasForeignKey("FuelTypeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("AutoWebApi.Models.GearBox", "GearBox")
+                    b.HasOne("AutoWebApi.Models.GearBox", null)
                         .WithMany("Cars")
                         .HasForeignKey("GearBoxId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("AutoWebApi.Models.Manufacturer", "Manufacturer")
+                    b.HasOne("AutoWebApi.Models.Manufacturer", null)
                         .WithMany("Cars")
                         .HasForeignKey("ManufacturerId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("AutoWebApi.Models.Model", "Model")
+                    b.HasOne("AutoWebApi.Models.Model", null)
                         .WithMany("Cars")
                         .HasForeignKey("ModelId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("BodyStyle");
-
-                    b.Navigation("Color");
-
-                    b.Navigation("Drivetrain");
-
-                    b.Navigation("FuelType");
-
-                    b.Navigation("GearBox");
-
-                    b.Navigation("Manufacturer");
-
-                    b.Navigation("Model");
                 });
 
             modelBuilder.Entity("AutoWebApi.Models.Model", b =>

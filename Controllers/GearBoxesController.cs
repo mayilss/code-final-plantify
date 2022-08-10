@@ -38,7 +38,7 @@ namespace AutoWebApi.Controllers
             }
             return Ok(gearBox);
         }
-        // api/gearboxes/fueltypescars/{id}
+        // api/gearboxes/gearboxescars/{id}
         [HttpGet("[action]/{id}")]
         public async Task<IActionResult> GearBoxesCars(int id)
         {

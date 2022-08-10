@@ -17,7 +17,7 @@ namespace AutoWebApi.Controllers
         {
             this.db = db;
         }
-        // api/gearboxes
+        // api/models
         [HttpGet]
         public async Task<IActionResult> GetAllModels()
         {
@@ -27,7 +27,7 @@ namespace AutoWebApi.Controllers
             }
             return Ok(await db.Models.ToListAsync());
         }
-        // api/gearboxes/{id}
+        // api/models/{id}
         [HttpGet("{id}")]
         public async Task<IActionResult> GetModel(int id)
         {
@@ -38,7 +38,7 @@ namespace AutoWebApi.Controllers
             }
             return Ok(model);
         }
-        // api/gearboxes/fueltypescars/{id}
+        // api/models/modelscars/{id}
         [HttpGet("[action]/{id}")]
         public async Task<IActionResult> ModelsCars(int id)
         {
@@ -54,7 +54,7 @@ namespace AutoWebApi.Controllers
             var modelsCars = await db.Models.Where(m => m.Id == id).Include(c => c.Cars).ToListAsync();
             return Ok(modelsCars);
         }
-        // api/gearboxes
+        // api/models
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] Model model)
         {
@@ -62,7 +62,7 @@ namespace AutoWebApi.Controllers
             await db.SaveChangesAsync();
             return StatusCode(StatusCodes.Status201Created);
         }
-        // api/gearboxes/{id}
+        // api/models/{id}
         [HttpPut("{id}")]
         public async Task<IActionResult> Put(int id, [FromBody] Model modelObj)
         {
@@ -76,7 +76,7 @@ namespace AutoWebApi.Controllers
             await db.SaveChangesAsync();
             return Ok("Model updated successfully!");
         }
-        // api/gearboxes/{id}
+        // api/models/{id}
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {

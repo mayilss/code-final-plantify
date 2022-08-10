@@ -10,7 +10,7 @@ namespace AutoWebApi.Helpers
         public static async Task<string> UploadImage(IFormFile file)
         {
             string connectionString = @"DefaultEndpointsProtocol=https;AccountName=carimagestorage;AccountKey=MnnevYi4a/z2Nw8p9vrtVNVcO42cG9niJhJ0Qk0IxyUzYrquqtfUF2qBIFpTc277rpCW4wPrlh2D+AStq7Td4A==;EndpointSuffix=core.windows.net";
-            string containerName = "productimg";
+            string containerName = "autoimage";
 
             BlobContainerClient blobContainerClient = new BlobContainerClient(connectionString, containerName);
             BlobClient blobClient = blobContainerClient.GetBlobClient(file.FileName);
