@@ -1,0 +1,36 @@
+@import "../../App.scss";
+
+.form {
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0;
+    row-gap: 15px;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 10px;
+
+    label, 
+    p, input {
+        font-weight: 400;
+        font-size: 1.6rem;
+        line-height: 1.9rem;
+    }
+
+    input {
+        width: 100%;
+        padding: 1rem;
+        outline: none;
+        border-radius: 10px;
+        border: 1px solid #c4c4c4c4;
+    }
+    p{
+        color: red;
+    }
+}
+.btnHolder{
+    width: 20rem;
+}

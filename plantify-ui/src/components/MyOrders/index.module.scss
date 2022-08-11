@@ -1,0 +1,49 @@
+@import "../../App.scss";
+
+.wrapper {
+    padding-left: 2rem;
+}
+
+.alert {
+    display: flex;
+    align-items: center;
+    background-color: #fdf0d7;
+    padding: 1.5rem;
+    column-gap: 10px;
+    margin-top: 2rem;
+
+    p {
+        font-weight: 400;
+        font-size: 1.6rem;
+        line-height: 2.4rem;
+        color: #bf761b;
+    }
+}
+
+.table {
+    width: 100%;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    margin-top: 2rem;
+
+    thead,
+    tr:not(:last-child) {
+        border-bottom: 1px solid #c4c4c4;
+    }
+
+    td,
+    th {
+        padding: 2.8rem;
+        font-size: 1.6rem;
+        line-height: 1.9rem;
+    }
+
+    th {
+        font-weight: 700;
+    }
+}
+.id{
+    display: flex;
+    align-items: center;
+    column-gap: 1.6rem;
+}

@@ -1,0 +1,41 @@
+@import "../../App.scss";
+
+.table {
+    width: 100%;
+
+    thead {
+        border-bottom: 1px solid #EEEEEE;
+    }
+
+    th {
+        font-weight: 600;
+        font-size: 1.6rem;
+        line-height: 1.9rem;
+        text-align: right;
+    }
+}
+.notification{
+    display: flex;
+    align-items: center;
+    background: rgba(150, 195, 61, 0.2);
+    padding: 1rem 1.5rem;
+    column-gap: 1rem;
+    margin: 1.5rem 0;
+    p{
+        font-weight: 400;
+        font-size: 1.6rem;
+        line-height: 2.4rem;
+        color: $green;
+    }
+}
+.clearBtn{
+    margin: 10px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    font-weight: 600;
+    font-size: 1.6rem;
+    line-height: 1.9rem;
+    text-decoration-line: underline;
+    color: #855000;
+}

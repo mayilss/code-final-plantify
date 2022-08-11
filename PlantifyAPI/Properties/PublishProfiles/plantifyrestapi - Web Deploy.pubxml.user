@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA7GOpvUyYZkWTIs72MIHC6AAAAAACAAAAAAAQZgAAAAEAACAAAAADshfOvcbffdGGVGSe15pMTWm0fFOFs3Rb11tZFZlaswAAAAAOgAAAAAIAACAAAAD9Y4xuTB5/9uJ2Mh1IzG/gX2xsrjnbftAuaXHwhmn1MYAAAABqZzDbtcX9OmP+4qJzjKK4nDle644oLRKyh4bWmcLrhRxvwjsPEP2CxRWZmO5aju47Bld3DjRotpPw0zJ5PKT9DxHviLD0c923w0BeseFDk3XC3CwAvybC9H5eiE+Z9udXJ8v/wQcBnWnK64+xhB/Cp9G+2mxRi6U+dyvYaRfHgUAAAAAWB7p74Ofi3VffqNFbb/HASoFsgpuWM1CkShoztpyH0f4dFinbLY1JqpHmdL4gmmDY7v8K8ZqgOKpMGCH9wECA</EncryptedPassword>
+    <History>True|2022-08-05T07:13:25.3506206Z;False|2022-08-05T11:10:29.2585927+04:00;</History>
+  </PropertyGroup>
+  <ItemGroup>
+    <EFMigrations Include="PlantifyAPI.Data.PlantifyDbContext">
+      <Value>Server=tcp:plantifyapiserver.database.windows.net,1433%3bInitial Catalog=plantifydb%3bPersist Security Info=False%3bUser ID=mayilss%3bPassword=Ma0708771426%3bMultipleActiveResultSets=False%3bEncrypt=True%3bTrustServerCertificate=False%3bConnection Timeout=30%3b</Value>
+    </EFMigrations>
+  </ItemGroup>
+</Project>

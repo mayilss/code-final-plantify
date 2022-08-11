@@ -1,0 +1,39 @@
+@import "../../App.scss";
+
+.dropdown {
+    @include flex-center;
+    border: 2px solid $green;
+    border-radius: 10px;
+    padding: 1.5rem 3rem;
+    margin: 0 1rem 0 0;
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 1.9rem;
+    outline: none;
+    background-color: transparent;
+    position: relative;
+    min-width: 16.4rem;
+}
+.content {
+    position: absolute;
+    display: block;
+    top: 6.5rem;
+    z-index: 10;
+    background-color: #fff;
+    border: 2px solid $green;
+    min-width: 30rem;
+    left: 0;
+    border-radius: 10px;
+    max-height: 40rem;
+    ul {
+        text-align: left;
+    }
+    li {
+        border-bottom: 1px solid $grey;
+        padding: 1.2rem;
+        &:hover {
+            background-color: $green;
+            color: #fff;
+        }
+    }
+}

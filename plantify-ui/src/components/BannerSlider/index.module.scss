@@ -1,0 +1,101 @@
+@import "../../App.scss";
+
+.banner {
+    border-radius: 10px;
+    width: 100%;
+}
+
+.bannerImg {
+    width: 100%;
+    border-radius: 10px;
+    position: relative;
+
+    img {
+        width: 100%;
+        border-radius: 10px;
+    }
+}
+
+.bannerContent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.43);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    border-radius: 10px 0 0 10px;
+    padding: 5rem 0 3.8rem 3rem;
+    max-width: 40%;
+
+    p {
+        font-weight: 500;
+        font-size: 2.8rem;
+        line-height: 3.3rem;
+        color: #fff;
+        text-align: left;
+    }
+}
+
+.card {
+    position: relative;
+    border-radius: 10px;
+}
+
+.cardImg {
+    img {
+        width: 100%;
+        border-radius: 10px;
+    }
+}
+
+.topCardContent {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 0 10px;
+    padding: 1rem;
+    background-color: $orange;
+
+    p {
+        font-weight: 600;
+        font-size: 1.6rem;
+        line-height: 1.9rem;
+        color: #ffffff;
+    }
+}
+
+.bottomCardContent {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 0 10px;
+    padding: 1rem;
+    background-color: $purple;
+
+    p {
+        font-weight: 600;
+        font-size: 1.6rem;
+        line-height: 1.9rem;
+        color: #ffffff;
+        text-align: end;
+    }
+}
+.btnHolder{
+    width: 15rem;
+}
+@media screen and (max-width: 375px) {
+
+    .prev,
+    .next {
+        margin-top: 8rem;
+    }
+}

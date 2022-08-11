@@ -1,0 +1,76 @@
+@import "../../../App.scss";
+
+.headerTop {
+    background-color: $green;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.left {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    column-gap: 50px;
+    row-gap: 15px;
+}
+
+.leftItem {
+    display: flex;
+    align-items: center;
+
+    img{
+        height: 2.1rem;
+    }
+    p {
+        font-family: "Fira Sans", sans-serif;
+        font-weight: 500;
+        font-size: 1.4rem;
+        color: #ffffff;
+        margin-left: 10px;
+    }
+}
+
+.mid{
+    display: flex;
+    align-items: center;
+    column-gap: 4.5rem;
+    justify-content: center;
+}
+
+.right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    // padding-right: 45px;
+    flex-wrap: wrap;
+
+    a {
+        font-family: "Raleway", sans-serif;
+        font-weight: 600;
+        font-size: 1.4rem;
+        line-height: 1.6rem;
+        color: #ffffff;
+        cursor: pointer;
+    }
+
+    span {
+        font-family: "Raleway", sans-serif;
+        font-weight: 400;
+        font-size: 1.4rem;
+        line-height: 1.6rem;
+        color: #ffffff;
+    }
+}
+@media screen and (max-width: 767px) {
+    .mid{
+        display: none;
+    }
+}
+@media screen and (max-width: 575px) {
+    .left{
+        display: none;
+    }
+}
+

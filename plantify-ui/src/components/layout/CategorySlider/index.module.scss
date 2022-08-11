@@ -1,0 +1,41 @@
+@import "../../../App.scss";
+
+.itemWrapper {
+    @include flex-center;
+    flex-direction: column;
+    text-align: center;
+
+    p {
+        font-weight: 500;
+        font-size: 1.6rem;
+        line-height: 1.9rem;
+        color: #000000;
+        margin-top: 1rem;
+        text-align: center;
+    }
+}
+
+.itemHolder {
+    @include flex-center;
+    border: 2px solid $green;
+    width: 8.7rem;
+    height: 8.7rem;
+    border-radius: 50%;
+    padding: 0.7rem;
+    transition: 0.3 ease-in-out;
+
+    img {
+        height: 6rem;
+        object-fit: contain;
+    }
+
+    &:hover{
+        background-color: $green;
+        img{
+            fill: white;
+            stroke: white;
+            filter: brightness(10);
+            opacity: 1;
+        }
+    }
+}

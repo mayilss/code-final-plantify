@@ -1,0 +1,110 @@
+@import "../../App.scss";
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    background-color: $green;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: $shadow;
+    width: 100%;
+    row-gap: 10px;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+    border-radius: 10px;
+    padding: 1rem;
+
+    input,
+    textarea {
+        width: 100%;
+        padding: 1rem;
+        border: 1px solid $green;
+        border-radius: 10px;
+        outline: none;
+        font-weight: 400;
+        font-size: 1.6rem;
+    }
+
+    textarea {
+        height: 13rem;
+    }
+
+    label,
+    p {
+        font-weight: 300;
+        font-size: 1.6rem;
+        margin-bottom: 10px;
+        color: #fff;
+    }
+}
+
+.bottom {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    row-gap: 10px;
+    padding: 0 1rem;
+}
+
+.leftItem {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    column-gap: 1rem;
+
+    p {
+        font-family: 'Fira sans', sans-serif;
+        font-weight: 500;
+        font-size: 1.6rem;
+        line-height: 1.9rem;
+        color: #ffffff;
+    }
+    img{
+        width: 2.1rem;
+    }
+}
+
+.social {
+    img{
+        width: 2.1rem;
+        margin-right: 10px;
+    }
+}
+
+.right {
+   button{
+    border: none;
+    outline: none;
+    background-color: #fff;
+    color: $green;
+    border-radius: 23.31px;
+    box-shadow: $shadow;
+    padding: 1.4rem 3rem;
+    transition: 0.3s ease-in-out;
+    max-width: 17.5rem;
+
+    font-weight: 400;
+    font-size: 1.8rem;
+    line-height: 2.1rem;
+    text-align: center;
+
+    &:hover{
+        transform: scale(1.05);
+    }
+   }
+}

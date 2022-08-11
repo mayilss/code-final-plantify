@@ -1,0 +1,26 @@
+@import "../../App.scss";
+
+.wrapper{
+    width: 100%;
+    background-color: $green;
+    padding: 2rem;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+}
+.list{
+    display: flex;
+    align-items: center;
+}
+
+.item{
+    color: #fff;
+    padding: 0 0.5rem;
+    font-weight: 500;
+    font-size: 1.6rem;
+    line-height: 1.9rem;
+
+    &:hover{
+        color: #fff;
+    }
+}

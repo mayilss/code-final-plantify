@@ -1,0 +1,59 @@
+@import "../../../App.scss";
+
+.wrapper{
+    position: fixed;
+    right: 0rem;
+    top: 0;
+    width: 45rem;
+    height: 100vh;
+    background-color: #fff;
+    box-shadow: $shadow;
+    z-index: 9999;
+    padding: 4rem;
+
+    ul{
+        padding: 5rem 0 0 0;
+        font-size: 2.6rem;
+        
+        li{
+            padding: 2rem 0rem;
+            border-bottom: 1px solid $grey;
+            cursor: pointer;
+            
+            a{
+                color: #000;
+            }
+        }
+    }
+}
+
+.top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .close{
+        @include flex-center;
+        margin-right: 2rem;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        div:first-child{
+            width: 0.4rem;
+            height: 3rem;
+            background-color: #000;
+            transform: rotate(45deg);
+            transform-origin:right;
+            border-radius: 10px;
+        }
+        div{
+            width: 0.4rem;
+            height: 3rem;
+            background-color: #000;
+            transform: rotate(-45deg);
+            transform-origin:left;
+            border-radius: 10px;
+            
+
+        }
+    }
+}

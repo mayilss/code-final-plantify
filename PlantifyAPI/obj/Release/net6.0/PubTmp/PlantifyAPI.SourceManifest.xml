@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<sitemanifest>
+  <IisApp path="D:\Code-Academy\Final\PlantifyAPI\obj\Release\net6.0\PubTmp\Out\" />
+  <dbfullsql path="D:\Code-Academy\Final\PlantifyAPI\obj\Release\net6.0\PubTmp\EFSQLScripts\PlantifyAPI.Data.PlantifyDbContext.sql" />
+</sitemanifest>

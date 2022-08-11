@@ -1,0 +1,41 @@
+@import "../../App.scss";
+
+.left,
+.leftImg,
+.leftImg img,
+.cardLeft,
+.cardLeftImg,
+.cardLeftImg img,
+.cardRight,
+.cardRightImg,
+.cardRightImg img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.cardLeft,
+.leftImg {
+    position: relative;
+}
+
+.button {
+    position: absolute;
+    bottom: 2rem;
+    left: 2rem;
+}
+
+.cardLeftContent {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-radius: 0 10px;
+    padding: 1.6rem;
+    background-color: $purple;
+
+    p {
+        font-weight: 600;
+        font-size: 1.6rem;
+        line-height: 1.9rem;
+        color: #ffffff;
+    }
+}

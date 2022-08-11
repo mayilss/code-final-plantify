@@ -1,0 +1,79 @@
+@import "../../App.scss";
+
+.row {
+    border-bottom: 1px solid $grey;
+    td {
+        padding: 1rem 0.3rem;
+        vertical-align: top;
+        text-align: left;
+        height: 100%;
+        img {
+            width: 90%;
+            max-width: 30rem;
+        }
+    }
+}
+
+.title {
+    font-weight: 500;
+    font-size: 2.8rem;
+    line-height: 3.3rem;
+}
+
+.brand {
+    font-weight: 500;
+    font-size: 1.6rem;
+    line-height: 1.9rem;
+    color: #c4c4c4;
+}
+
+.price {
+    font-size: 2rem;
+    font-family: "Fira sans", sans-serif;
+    color: $green;
+}
+.price,
+.quantity {
+    text-align: right;
+}
+.quantity {
+    float: right;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 0.5rem;
+    border: 1px solid $grey;
+    border-radius: 50px;
+    width: 8rem;
+    justify-self: end;
+    p {
+        font-size: 1.6rem;
+    }
+    button {
+        @include flex-center;
+        border: none;
+        outline: none;
+        background-color: $green;
+        color: #fff;
+        border-radius: 50%;
+        width: 3rem;
+        height: 3rem;
+        img {
+            width: 2rem;
+        }
+    }
+}
+
+.last {
+    height: 20rem;
+    position: relative;
+    button {
+        position: absolute;
+        bottom: 1rem;
+        right: 1rem;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        padding: 5px;
+    }
+}

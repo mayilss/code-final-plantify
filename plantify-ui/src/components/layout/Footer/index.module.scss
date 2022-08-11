@@ -1,0 +1,53 @@
+@import "../../../App.scss";
+
+footer {
+    background-color: $grey;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.info {
+    margin-top: 1.5rem;
+
+    p {
+        font-family: "Fira Sans", sans-serif;
+        font-weight: 500;
+        font-size: 1.6rem;
+        line-height: 2.4rem;
+    }
+}
+
+.social {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    margin-top: 15px;
+}
+
+.list {
+    padding-left: 2rem;
+    h6 {
+        font-weight: 600;
+        font-size: 1.6rem;
+        line-height: 1.9rem;
+    }
+
+    ul {
+        font-weight: 500;
+        font-size: 1.4rem;
+        line-height: 2.4rem;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .list,
+    .info {
+        @include flex-center;
+        width: 100%;
+        flex-direction: column;
+        margin: 0;
+    }
+    .infoWrapper{
+        padding: 0 10rem;
+    }
+}

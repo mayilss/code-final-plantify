@@ -1,0 +1,22 @@
+@import "../../App.scss";
+
+.btn{
+    border: none;
+    outline: none;
+    background-color: $green;
+    color: #ffffff;
+    border-radius: 23.31px;
+    box-shadow: $shadow;
+    padding: 1.4rem 3rem;
+    transition: 0.3s ease-in-out;
+    width: 100%;
+
+    font-weight: 400;
+    font-size: 1.8rem;
+    line-height: 2.1rem;
+    text-align: center;
+
+    &:hover{
+        transform: scale(1.05);
+    }
+}
