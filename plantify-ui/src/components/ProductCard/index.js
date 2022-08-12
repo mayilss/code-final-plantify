@@ -48,7 +48,7 @@ export const ProductCard = (props) => {
         ) {
             return;
         } else {
-            setCartArray([...cartArray, product]);
+            setCartArray([...cartArray, { ...product, quantity: 1 }]);
         }
     };
     return (

@@ -7,7 +7,7 @@ footer {
 }
 
 .info {
-    margin-top: 1.5rem;
+    margin-top: 2rem !important;
 
     p {
         font-family: "Fira Sans", sans-serif;
@@ -47,7 +47,7 @@ footer {
         flex-direction: column;
         margin: 0;
     }
-    .infoWrapper{
+    .infoWrapper {
         padding: 0 10rem;
     }
 }

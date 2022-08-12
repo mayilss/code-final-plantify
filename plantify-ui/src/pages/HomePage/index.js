@@ -56,7 +56,6 @@ export const HomePage = () => {
                                 img={prodItem.image}
                                 title={prodItem.name}
                                 price={prodItem.price}
-                                // likeHandler={() => handleLike(prodItem)}
                             />
                         </div>
                     );

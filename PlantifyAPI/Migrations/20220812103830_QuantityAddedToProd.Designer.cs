@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PlantifyAPI.Data;
 
 namespace PlantifyAPI.Migrations
 {
     [DbContext(typeof(PlantifyDbContext))]
-    partial class PlantifyDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220812103830_QuantityAddedToProd")]
+    partial class QuantityAddedToProd
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -76,6 +78,9 @@ namespace PlantifyAPI.Migrations
 
                     b.Property<string>("Price")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
 
                     b.Property<string>("StockKeepingUnit")
                         .HasColumnType("nvarchar(max)");

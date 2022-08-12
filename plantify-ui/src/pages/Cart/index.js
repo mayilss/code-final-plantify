@@ -4,31 +4,31 @@ import { Bill } from "../../components/Bill";
 import { TextContent } from "../../components/TextContent";
 import { CartRow } from "../../components/CartRow";
 
-import succ from "../../icons/succ-icon.svg";
-
 import style from "./index.module.scss";
 import { CartContext } from "../../contexts";
 
 export const Cart = () => {
     const { cartState } = useContext(CartContext);
     const [cartArray, setCartArray] = cartState;
+    const [totalPrice, setTotalPrice] = useState(0);
+    const [allTotalPrice, setAllTotalPrice] = useState(0);
 
     useEffect(() => {
         setCartArray(JSON.parse(window.localStorage.getItem("cart")));
-        console.log(cartArray);
     }, []);
 
     const handleClear = () => {
         setCartArray([]);
     };
 
+    useEffect(() => {
+        setAllTotalPrice(allTotalPrice + totalPrice);
+        console.log("all", allTotalPrice);
+    }, [totalPrice]);
+
     return (
         <main className="container mt-4">
             <TextContent title="Alış-veriş səbəti" />
-            {/* <div className={style.notification}>
-                <img src={succ} alt="success" />
-                <p>Alış-veriş səbətinizə Ficus Nitida əlavə etdiniz.</p>
-            </div> */}
             <div className="row my-4">
                 <div className="col-12 col-md-8">
                     <table className={style.table}>
@@ -50,6 +50,9 @@ export const Cart = () => {
                                         image={item.image}
                                         price={item.price}
                                         brand={item.brand}
+                                        quantity={item.quantity}
+                                        setTotalPrice={setTotalPrice}
+                                        totalPrice={totalPrice}
                                     />
                                 );
                             })}

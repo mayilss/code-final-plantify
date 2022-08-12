@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Code-Academy\\Final\\PlantifyAPI\\PlantifyAPI.csproj": {}
+    "D:\\Code-Academy\\AutoWebApi\\PlantifyAPI\\PlantifyAPI.csproj": {}
   },
   "projects": {
-    "D:\\Code-Academy\\Final\\PlantifyAPI\\PlantifyAPI.csproj": {
+    "D:\\Code-Academy\\AutoWebApi\\PlantifyAPI\\PlantifyAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Code-Academy\\Final\\PlantifyAPI\\PlantifyAPI.csproj",
+        "projectUniqueName": "D:\\Code-Academy\\AutoWebApi\\PlantifyAPI\\PlantifyAPI.csproj",
         "projectName": "PlantifyAPI",
-        "projectPath": "D:\\Code-Academy\\Final\\PlantifyAPI\\PlantifyAPI.csproj",
+        "projectPath": "D:\\Code-Academy\\AutoWebApi\\PlantifyAPI\\PlantifyAPI.csproj",
         "packagesPath": "C:\\Users\\Mayil\\.nuget\\packages\\",
-        "outputPath": "D:\\Code-Academy\\Final\\PlantifyAPI\\obj\\",
+        "outputPath": "D:\\Code-Academy\\AutoWebApi\\PlantifyAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

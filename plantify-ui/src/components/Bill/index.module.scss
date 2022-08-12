@@ -1,13 +1,13 @@
 @import "../../App.scss";
 
-.wrapper{
+.wrapper {
     padding: 1.6rem;
     box-shadow: $shadow;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
 }
-.description{
+.description {
     border-top: 1px solid $grey;
     border-bottom: 1px solid $grey;
     margin: 2.4rem 0;
@@ -16,37 +16,38 @@
     font-size: 1.6rem;
     line-height: 1.9rem;
 }
-.contentWrapper{
+.contentWrapper {
     border-bottom: 1px solid $grey;
 }
 
-.content{
+.content {
     font-weight: 500;
     font-size: 1.6rem;
     line-height: 1.9rem;
-    color: #ABABAB;
+    color: #ababab;
 }
-.price{
+.price {
     text-align: end;
     font-size: 2.4rem;
-    font-family: 'Fira sans', sans-serif;
+    font-family: "Fira sans", sans-serif;
 }
-.contentTotal, 
-.title{
+.contentTotal,
+.title {
     font-weight: 500;
     font-size: 2.8rem;
     line-height: 3.3rem;
+    border-bottom: 1px solid $grey;
 }
-.priceTotal{
-    font-family: 'Fira sans', sans-serif;
+.priceTotal {
+    font-family: "Fira sans", sans-serif;
     font-weight: 700;
     font-size: 2.8rem;
     line-height: 3.3rem;
     text-align: end;
 
-    color: #96C33D;
+    color: #96c33d;
 }
-.btnHolder{
+.btnHolder {
     margin: auto;
     width: 20rem;
 }

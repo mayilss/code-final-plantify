@@ -1,6 +1,5 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 
-import cartPic from "../../images/basket-pic.png";
 import deleteIcon from "../../icons/b-delete.svg";
 import plus from "../../icons/plus.svg";
 import minus from "../../icons/minus.svg";
@@ -14,7 +13,21 @@ export const CartRow = (props) => {
 
     const [quantity, setQuantity] = useState(1);
 
+    useEffect(() => {
+        const updatedProducts = cartArray.map((p) => {
+            if (p.id === props.product.id) {
+                p.quantity = quantity;
+                return p;
+            } else {
+                return p;
+            }
+        });
+        console.log(updatedProducts);
+        window.localStorage.setItem("cart", JSON.stringify(updatedProducts));
+    }, [quantity]);
+
     const handleDecrement = () => {
+        console.log(props.product);
         if (quantity <= 1) {
             return;
         }
@@ -67,6 +80,7 @@ export const CartRow = (props) => {
             </td>
             <td className={style.last}>
                 <p className={style.price}>{props.price * quantity + " ₼"}</p>
+                {props.setTotalPrice(props.price * quantity)}
                 <button
                     onClick={() => {
                         handleDelete(props.product);
