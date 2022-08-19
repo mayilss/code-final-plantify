@@ -1,7 +1,6 @@
 import "./App.scss";
 import "bootstrap/dist/css/bootstrap.css";
 
-// import { useEffect, useState } from "react";
 import { useEffect, useState } from "react";
 import { Routes } from "react-router-dom";
 import { Route } from "react-router-dom";

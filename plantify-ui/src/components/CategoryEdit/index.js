@@ -17,7 +17,6 @@ export const CategoryEdit = (props) => {
         const formData = new FormData();
         formData.append("name", name);
         formData.append("image", selectedFile);
-        console.log(selectedFile);
         try {
             console.log("test");
             const res = await axios({
@@ -28,7 +27,6 @@ export const CategoryEdit = (props) => {
                 data: formData,
                 headers: { "Content-Type": "multipart/form-data" },
             });
-            console.log(res);
         } catch (error) {
             console.log(error);
         }
@@ -37,13 +35,14 @@ export const CategoryEdit = (props) => {
 
     const handleName = (e) => {
         setName(e.target.value);
-        console.log(name);
     };
     const handleImage = (e) => {
-        if (selectedFile === null) {
-            return;
+        if (e.target.files[0] !== selectedFile) {
+            if (e.target.files[0] !== null) {
+                setSelectedFile(e.target.files[0]);
+            }
         }
-        setSelectedFile(e.target.files[0]);
+        return;
     };
 
     return (

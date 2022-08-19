@@ -12,7 +12,6 @@ import cardBgb from "../../images/front-view-bouquet-2.png";
 
 import { GreenButton } from "../GreenButton";
 
-
 export const Bannerslider = () => {
     return (
         <div className="row gy-4 mt-4">
@@ -28,25 +27,27 @@ export const Bannerslider = () => {
                                 <img src={Background} alt="banner" />
                                 <div className={style.bannerContent}>
                                     <p>
-                                        Lorem ipsum dolor sit amet
-                                        consectetur adipisicing elit.
+                                        Lorem ipsum dolor sit amet consectetur
+                                        adipisicing elit.
                                     </p>
                                     <div className={style.btnHolder}>
-                                        <GreenButton innerText="Ətraflı" />
+                                        <GreenButton innerText="Show more" />
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div className={`carousel-item slide active ${style.banner}`}>
+                        <div
+                            className={`carousel-item slide active ${style.banner}`}
+                        >
                             <div className={style.bannerImg}>
                                 <img src={Background} alt="banner" />
                                 <div className={style.bannerContent}>
                                     <p>
-                                        Lorem ipsum dolor sit amet
-                                        consectetur adipisicing elit.
+                                        Lorem ipsum dolor sit amet consectetur
+                                        adipisicing elit.
                                     </p>
                                     <div className={style.btnHolder}>
-                                        <GreenButton innerText="Ətraflı" />
+                                        <GreenButton innerText="Show more" />
                                     </div>
                                 </div>
                             </div>
@@ -81,7 +82,7 @@ export const Bannerslider = () => {
                                     <img src={cardBg} alt="card-bg" />
                                     <div className={style.topCardContent}>
                                         <p>
-                                            FAVORİ <br /> MƏHSULLAR
+                                            FAVORITE <br /> PRODUCTS
                                         </p>
                                     </div>
                                 </div>
@@ -93,7 +94,7 @@ export const Bannerslider = () => {
                                     <img src={cardBgb} alt="card-bg" />
                                     <div className={style.bottomCardContent}>
                                         <p>
-                                            HƏDİYYƏLİK <br /> GÜLLƏR
+                                            GIFT <br /> FLOWERS
                                         </p>
                                     </div>
                                 </div>
@@ -103,9 +104,5 @@ export const Bannerslider = () => {
                 </div>
             </div>
         </div>
-
-
-
-
     );
-}
+};

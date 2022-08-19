@@ -5,7 +5,7 @@ import { GreenButton } from "../GreenButton";
 import style from "./index.module.scss";
 import { useState } from "react";
 import { FilterDropdown } from "../FilterDropdown";
-import { useQuery, useQueryClient } from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query";
 
 export const ProductEdit = (props) => {
     const [product, setProduct] = props.id;
@@ -45,7 +45,6 @@ export const ProductEdit = (props) => {
                 data: formData,
                 headers: { "Content-Type": "multipart/form-data" },
             });
-            console.log(res.data);
         } catch (error) {
             console.log(error);
         }
@@ -54,14 +53,11 @@ export const ProductEdit = (props) => {
 
     const handleName = (e) => {
         setName(e.target.value);
-        console.log(name);
     };
     const handlePrice = (e) => {
         setPrice(e.target.value);
-        console.log(price);
     };
     const handleImage = (e) => {
-        console.log("img", e.target.files[0]);
         if (e.target.files[0] !== selectedFile) {
             if (e.target.files[0] !== null) {
                 setSelectedFile(e.target.files[0]);

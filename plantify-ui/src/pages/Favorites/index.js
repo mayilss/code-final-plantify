@@ -12,7 +12,6 @@ export const Favorites = () => {
 
     useEffect(() => {
         setFavsArray(JSON.parse(window.localStorage.getItem("favorites")));
-        console.log("favspage", favsArray);
     }, []);
 
     return (

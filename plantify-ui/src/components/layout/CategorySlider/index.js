@@ -5,15 +5,7 @@ import "owl.carousel/dist/assets/owl.theme.default.css";
 
 import style from "./index.module.scss";
 
-import succulent from "../../../icons/succulent-green.svg";
-import tree from "../../../icons/tree.svg";
-import plant from "../../../icons/plant.svg";
-import roses from "../../../icons/roses.svg";
-import vector from "../../../icons/Vector.svg";
-import terrarium from "../../../icons/terrarium.svg";
-import wateringCan from "../../../icons/watering-can.svg";
-import fertilizer from "../../../icons/fertilizer.svg";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
 

@@ -22,12 +22,10 @@ export const CartRow = (props) => {
                 return p;
             }
         });
-        console.log(updatedProducts);
         window.localStorage.setItem("cart", JSON.stringify(updatedProducts));
     }, [quantity]);
 
     const handleDecrement = () => {
-        console.log(props.product);
         if (quantity <= 1) {
             return;
         }

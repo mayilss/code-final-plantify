@@ -11,13 +11,15 @@ export const Footer = () => {
         <footer>
             <div className="container">
                 <div className="row d-flex align-items-center gy-4">
-                    <div className={`col-12 col-sm-6 col-md-4 col-lg-2 ${style.infoWrapper}`}>
+                    <div
+                        className={`col-12 col-sm-6 col-md-4 col-lg-2 ${style.infoWrapper}`}
+                    >
                         <Logo width={"90%"} />
                         <div className={style.info}>
-                            <p>Müştəri xidməti qaynar xətti:</p>
-                            <p>İş saatları: 9:00 - 18:00</p>
-                            <p>Tel: +(994) 55 555 00 00</p>
-                            <p>Ünvan: Ziya Bünyadov 7021</p>
+                            <p>Customer services hot line:</p>
+                            <p>Work hours: 9:00 - 18:00</p>
+                            <p>Phone: +(994) 55 555 00 00</p>
+                            <p>Address: Ziya Bünyadov 7021</p>
                             <div className={style.social}>
                                 <img src={Instagram} alt="social" />
                                 <img src={Facebook} alt="social" />
@@ -27,7 +29,7 @@ export const Footer = () => {
                     </div>
                     <div className="col-12 col-sm-6 col-md-4 col-lg-2">
                         <div className={style.list}>
-                            <h6>Ev bitkiləri</h6>
+                            <h6>Lorem</h6>
                             <ul>
                                 <li>
                                     <a>Lorem ipsum</a>
@@ -49,7 +51,7 @@ export const Footer = () => {
                     </div>
                     <div className="col-12 col-sm-6 col-md-4 col-lg-2">
                         <div className={style.list}>
-                            <h6>Çöl bitkiləri</h6>
+                            <h6>Lorem</h6>
                             <ul>
                                 <li>
                                     <a>Lorem ipsum</a>
@@ -71,7 +73,7 @@ export const Footer = () => {
                     </div>
                     <div className="col-12 col-sm-6 col-md-4 col-lg-2">
                         <div className={style.list}>
-                            <h6>Ofis bitkiləri</h6>
+                            <h6>Lorem</h6>
                             <ul>
                                 <li>
                                     <a>Lorem ipsum</a>
@@ -93,7 +95,7 @@ export const Footer = () => {
                     </div>
                     <div className="col-12 col-sm-6 col-md-4 col-lg-2">
                         <div className={style.list}>
-                            <h6>Güllər</h6>
+                            <h6>Lorem</h6>
                             <ul>
                                 <li>
                                     <a>Lorem ipsum</a>
@@ -115,7 +117,7 @@ export const Footer = () => {
                     </div>
                     <div className="col-12 col-sm-6 col-md-4 col-lg-2">
                         <div className={style.list}>
-                            <h6>Əlaqə</h6>
+                            <h6>Lorem</h6>
                             <ul>
                                 <li>
                                     <a>Lorem ipsum</a>
@@ -139,4 +141,4 @@ export const Footer = () => {
             </div>
         </footer>
     );
-}
+};

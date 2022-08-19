@@ -82,7 +82,7 @@ export const ProductCard = (props) => {
                     }}
                 >
                     <img src={btn} alt="cartbtn" />
-                    Səbətə at
+                    Add to cart
                 </button>
             </div>
         </div>

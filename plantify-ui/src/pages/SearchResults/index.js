@@ -60,7 +60,6 @@ export const SearchResults = () => {
                                     className="col-md-3 col-6"
                                 >
                                     <ProductCard
-                                        // likeHandler={() => handleLike(prodItem)}
                                         product={prodItem}
                                         img={prodItem.image}
                                         title={prodItem.name}

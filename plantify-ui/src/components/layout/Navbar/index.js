@@ -14,27 +14,27 @@ export const Navbar = () => {
                     </li>
                     <li>
                         <Link className={style.item} to="/about">
-                            Haqqımızda
+                            About us
                         </Link>
                     </li>
                     <li>
                         <Link className={style.item} to="/delivery-terms">
-                            Çatdırılma şərtləri
+                            Delivery terms
                         </Link>
                     </li>
                     <li>
                         <Link className={style.item} to="useful-info">
-                            Faydalı məlumatlar
+                            Useful info
                         </Link>
                     </li>
                     <li>
                         <Link className={style.item} to="/gallery">
-                            Foto/Video
+                            Gallery
                         </Link>
                     </li>
                     <li>
                         <Link className={style.item} to="/contact">
-                            Əlaqə
+                            Contact
                         </Link>
                     </li>
                 </ul>

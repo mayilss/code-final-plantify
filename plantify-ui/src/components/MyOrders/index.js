@@ -2,7 +2,6 @@ import { TextContent } from "../../components/TextContent";
 
 import style from "./index.module.scss";
 
-import warningIcon from "../../icons/warning.svg";
 import pendingIcon from "../../icons/pending.svg";
 import approveIcon from "../../icons/approve.svg";
 import cancelIcon from "../../icons/cancel.svg";
@@ -11,10 +10,6 @@ export const MyOrders = () => {
     return (
         <div className={style.wrapper}>
             <TextContent title="Sifarişlərim" />
-            {/* <div className={style.alert}>
-                <img src={warningIcon} alt="warning" />
-                <p>Siz heç bir sifariş verməmisiniz.</p>
-            </div> */}
             <table className={style.table}>
                 <thead>
                     <tr>
@@ -56,4 +51,4 @@ export const MyOrders = () => {
             </table>
         </div>
     );
-}
+};

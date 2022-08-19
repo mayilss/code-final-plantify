@@ -25,28 +25,28 @@ export const SideMenu = (props) => {
                 </div>
                 <ul>
                     <li>
-                        <Link to="/cart">Səbət</Link>
+                        <Link to="/cart">Cart</Link>
                     </li>
                     <li>
-                        <Link to="/favorites">Favoritlər</Link>
+                        <Link to="/favorites">Favorites</Link>
                     </li>
                     <li>
                         <Link to="/shop">Shop</Link>
                     </li>
                     <li>
-                        <Link to="/about">Haqqımızda</Link>
+                        <Link to="/about">About us</Link>
                     </li>
                     <li>
-                        <Link to="/delivery-terms">Çatdırılma şərtləri</Link>
+                        <Link to="/delivery-terms">Delivery terms</Link>
                     </li>
                     <li>
-                        <Link to="useful-info">Faydalı məlumatlar</Link>
+                        <Link to="useful-info">Useful info</Link>
                     </li>
                     <li>
-                        <Link to="/gallery">Foto/Video</Link>
+                        <Link to="/gallery">Gallery</Link>
                     </li>
                     <li>
-                        <Link to="/contact">Əlaqə</Link>
+                        <Link to="/contact">Contact</Link>
                     </li>
                 </ul>
             </div>

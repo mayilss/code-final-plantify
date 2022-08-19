@@ -12,10 +12,10 @@ export const BannerItem = () => {
                 <div className={style.content}>
                     <p>Müxtəlif növ bitki çeşidləri</p>
                     <div className={style.btnHolder}>
-                        <GreenButton innerText="Ətraflı" />
+                        <GreenButton innerText="Show more" />
                     </div>
                 </div>
             </div>
         </div>
     );
-}
+};

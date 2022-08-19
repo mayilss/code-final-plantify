@@ -31,7 +31,6 @@ export const ProductDetails = (props) => {
     const { isLoading } = useQuery(["singleProduct"], fetchProduct, {
         onSuccess: (data) => {
             setProduct(data.data[0]);
-            console.log("prod", product);
         },
     });
 

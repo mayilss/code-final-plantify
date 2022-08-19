@@ -24,7 +24,6 @@ export const HomePage = () => {
     const { isLoading } = useQuery(["products"], fetchProds, {
         onSuccess: (data) => {
             setProds(data.data);
-            console.log(data.data);
         },
     });
 
@@ -63,7 +62,7 @@ export const HomePage = () => {
             </div>
             <div style={{ width: "20rem", margin: "auto" }}>
                 <Link to="shop">
-                    <GreenButton innerText="Hamısına bax" />
+                    <GreenButton innerText="All products" />
                 </Link>
             </div>
             <Banners />

@@ -7,7 +7,6 @@ import { useState } from "react";
 
 export const BrandEdit = (props) => {
     const [brand, setBrand] = props.id;
-    console.log(brand);
     const [name, setName] = useState(brand.name);
 
     const [isActive, setIsActive] = props.state;
@@ -20,7 +19,6 @@ export const BrandEdit = (props) => {
                 url: process.env.REACT_APP_API_URL + `/brands/${brand.id}`,
                 data: { name: name },
             });
-            console.log(res);
         } catch (error) {
             console.log(error);
         }
@@ -29,7 +27,6 @@ export const BrandEdit = (props) => {
 
     const handleName = (e) => {
         setName(e.target.value);
-        console.log(name);
     };
 
     return (

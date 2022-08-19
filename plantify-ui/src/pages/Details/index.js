@@ -3,8 +3,6 @@ import { useContext, useEffect, useState } from "react";
 import hrt from "../../icons/d-heart.svg";
 import dphone from "../../icons/phone.svg";
 import cartg from "../../icons/cart-g.svg";
-import plus from "../../icons/plus.svg";
-import minus from "../../icons/minus.svg";
 
 import style from "./index.module.scss";
 import { CartContext, FavoritesContext } from "../../contexts";
@@ -91,7 +89,7 @@ export const Details = () => {
                             className="d-flex align-items-center"
                         >
                             <img className={style.btnHeart} src={hrt} alt="" />
-                            <p className="m-0">Seçdiklərimə at</p>
+                            <p className="m-0">Add to favs</p>
                         </button>
                     </div>
                     <div className="row mt-5 gy-4">
@@ -103,12 +101,12 @@ export const Details = () => {
                                 }}
                                 className={style.btnWhite}
                             >
-                                <img src={cartg} alt="" /> <p>Səbətə at</p>
+                                <img src={cartg} alt="" /> <p>Add to cart</p>
                             </button>
                         </div>
                         <div className="col-6">
                             <button className={style.btnGreen}>
-                                <img src={dphone} alt="" /> <p>Əlaqə</p>
+                                <img src={dphone} alt="" /> <p>Contact</p>
                             </button>
                         </div>
                     </div>

@@ -12,12 +12,9 @@ export const Campaigns = () => {
             <div className="col-md-5 col-12">
                 <div className={style.left}>
                     <div className={style.leftImg}>
-                        <img
-                            src={campaignBannerBg}
-                            alt="campaign-banner-bg"
-                        />
+                        <img src={campaignBannerBg} alt="campaign-banner-bg" />
                         <div className={style.button}>
-                            <GreenButton innerText="Ətraflı" />
+                            <GreenButton innerText="Show more" />
                         </div>
                     </div>
                 </div>
@@ -33,7 +30,7 @@ export const Campaigns = () => {
                                 />
                                 <div className={style.cardLeftContent}>
                                     <p>
-                                        ENDİRIMLİ <br /> MƏHSULLAR
+                                        DISCOUNTED <br /> PRODUCTS
                                     </p>
                                 </div>
                             </div>
@@ -53,4 +50,4 @@ export const Campaigns = () => {
             </div>
         </div>
     );
-}
+};

@@ -27,7 +27,6 @@ export const BrandCreate = (props) => {
 
     const handleName = (e) => {
         setName(e.target.value);
-        console.log(name);
     };
 
     return (

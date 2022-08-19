@@ -32,11 +32,9 @@ export const CategoryCreate = (props) => {
 
     const handleName = (e) => {
         setName(e.target.value);
-        console.log(name);
     };
     const handleImage = (e) => {
         setSelectedFile(e.target.files[0]);
-        console.log(selectedFile);
     };
 
     return (
@@ -50,7 +48,6 @@ export const CategoryCreate = (props) => {
                         }}
                         type="text"
                         id="name"
-                        placeholder="test"
                     />
                 </div>
                 <div className={style.item}>

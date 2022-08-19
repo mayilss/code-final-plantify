@@ -5,8 +5,7 @@ import { FilterDropdown } from "../FilterDropdown";
 
 import style from "./index.module.scss";
 import { useState } from "react";
-import { useQuery, useQueryClient } from "@tanstack/react-query";
-import { Categories } from "../../pages/Categories";
+import { useQuery } from "@tanstack/react-query";
 
 export const ProductCreate = (props) => {
     const [name, setName] = useState("");
@@ -62,7 +61,6 @@ export const ProductCreate = (props) => {
     };
     const handleImage = (e) => {
         setSelectedFile(e.target.files[0]);
-        console.log(selectedFile);
     };
 
     const { isLoading } = useQuery(["brands5"], fetchBrands, {
@@ -148,7 +146,7 @@ export const ProductCreate = (props) => {
                     <div className="col-6 px-4">
                         <GreenButton
                             onclick={onSubmit}
-                            innerText="Create Category"
+                            innerText="Create Product"
                         />
                     </div>
                     <div className="col-6 px-4">

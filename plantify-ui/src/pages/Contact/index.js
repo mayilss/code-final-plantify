@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import { yupResolver } from '@hookform/resolvers/yup';
+import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 
 import { TextContent } from "../../components/TextContent";
@@ -13,37 +13,58 @@ import Facebook from "../../icons/facebook-w.svg";
 import Twitter from "../../icons/twitter-w.svg";
 import contactmap from "../../images/contact-map.png";
 
-const schema = yup.object({
-    name: yup.string().required(),
-    email: yup.string().email().required(),
-    message: yup.string().required()
-}).required();
+const schema = yup
+    .object({
+        name: yup.string().required(),
+        email: yup.string().email().required(),
+        message: yup.string().required(),
+    })
+    .required();
 
 export const Contact = () => {
-    const { register, handleSubmit, formState: { errors } } = useForm({
-        resolver: yupResolver(schema)
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+    } = useForm({
+        resolver: yupResolver(schema),
     });
-    const onSubmit = data => console.log(data);
+    const onSubmit = (data) => console.log(data);
 
     return (
         <main className="container my-4">
             <TextContent color="green" title="Əlaqə" />
             <div className="row gy-4 my-4">
                 <div className="col-md-6 col-12">
-                    <form className={style.form} onSubmit={handleSubmit(onSubmit)}>
+                    <form
+                        className={style.form}
+                        onSubmit={handleSubmit(onSubmit)}
+                    >
                         <div className={style.item}>
-                            <label htmlFor="name">Ad</label>
-                            <input type="text" id="name" {...register("name")} />
+                            <label htmlFor="name">Name</label>
+                            <input
+                                type="text"
+                                id="name"
+                                {...register("name")}
+                            />
                             <p>{errors.name?.message}</p>
                         </div>
                         <div className={style.item}>
                             <label htmlFor="email">E-mail</label>
-                            <input type="email" id="email" {...register("email")} />
+                            <input
+                                type="email"
+                                id="email"
+                                {...register("email")}
+                            />
                             <p>{errors.email?.message}</p>
                         </div>
                         <div className={style.item}>
-                            <label htmlFor="message">Mesaj</label>
-                            <textarea type="text" id="message" {...register("message")} />
+                            <label htmlFor="message">Message</label>
+                            <textarea
+                                type="text"
+                                id="message"
+                                {...register("message")}
+                            />
                             <p>{errors.message?.message}</p>
                         </div>
                         <div className={style.bottom}>
@@ -54,7 +75,7 @@ export const Contact = () => {
                                 </div>
                                 <div className={style.leftItem}>
                                     <img src={email} alt="" />
-                                    <p>ziragul@gmail.com</p>
+                                    <p>plantify@gmail.com</p>
                                 </div>
                                 <div className={style.social}>
                                     <img src={Instagram} alt="" />
@@ -63,7 +84,7 @@ export const Contact = () => {
                                 </div>
                             </div>
                             <div className={style.right}>
-                                <button type="submit">Göndər</button>
+                                <button type="submit">Send</button>
                             </div>
                         </div>
                     </form>
@@ -79,4 +100,4 @@ export const Contact = () => {
             </div>
         </main>
     );
-}
+};

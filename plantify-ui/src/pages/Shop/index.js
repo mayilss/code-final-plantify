@@ -1,6 +1,5 @@
 import { useState } from "react";
 
-import { FilterDropdown } from "../../components/FilterDropdown";
 import { ProductCard } from "../../components/ProductCard";
 
 import loadingGif from "../../icons/loading.gif";
@@ -18,7 +17,6 @@ export const Shop = () => {
 
     const { isLoading: isLoading2 } = useQuery(["products2"], fetchProds, {
         onSuccess: (data) => {
-            console.log(data.data);
             setProds(data.data);
         },
     });
@@ -50,7 +48,6 @@ export const Shop = () => {
                                     className="col-md-3 col-6"
                                 >
                                     <ProductCard
-                                        // likeHandler={() => handleLike(prodItem)}
                                         product={prodItem}
                                         img={prodItem.image}
                                         title={prodItem.name}
