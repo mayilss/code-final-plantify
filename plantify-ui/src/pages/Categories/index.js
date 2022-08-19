@@ -6,13 +6,12 @@ import { ProductCard } from "../../components/ProductCard";
 import loadingGif from "../../icons/loading.gif";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { useQuery, useQueryClient } from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query";
 
 export const Categories = () => {
     const [prods, setProds] = useState([]);
     const [categoryId, setCategoryId] = useState(1);
     const [category, setCategory] = useState("House plants");
-    const queryClient = useQueryClient();
 
     const fetchProds = async () => {
         return await axios(

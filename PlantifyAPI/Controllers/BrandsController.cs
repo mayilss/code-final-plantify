@@ -45,5 +45,29 @@ namespace PlantifyAPI.Controllers
             var brandProducts = await db.Brands.Where(p => p.Id == id).Include(p => p.Products).ToListAsync();
             return Ok(brandProducts);
         }
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateBrand(int id, [FromBody] Brand brandObj)
+        {
+            var brand = await db.Brands.FindAsync(id);
+            if (brand == null)
+            {
+                return NotFound("No brand found with this id!");
+            }
+            brand.Name = brandObj.Name;
+            await db.SaveChangesAsync();
+            return Ok("Brand updated successfully!");
+        }
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteBrand(int id)
+        {
+            var brand = await db.Brands.FindAsync(id);
+            if (brand == null)
+            {
+                return NotFound("No brand found with this id!");
+            }
+            db.Brands.Remove(brand);
+            await db.SaveChangesAsync();
+            return Ok("Brand removed successfully!");
+        }
     }
 }

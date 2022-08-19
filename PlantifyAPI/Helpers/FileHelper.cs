@@ -9,6 +9,8 @@ namespace PlantifyAPI.Helpers
     {
         public static async Task<string> UploadImage(IFormFile file)
         {
+            if (file == null)
+                return null;
             try
             {
                 string connectionString = @"DefaultEndpointsProtocol=https;AccountName=plantifystorageaccount;AccountKey=Qv3+R0e2H4/pcZCJiV0FAReiaWu4xoR1DnDmLJJXvBfHlPAdkfjgulzqVT2gKTO7kXDawSwZ/rdM+AStPxfXRg==;EndpointSuffix=core.windows.net";
@@ -26,7 +28,7 @@ namespace PlantifyAPI.Helpers
             catch (System.Exception)
             {
 
-                return null;
+                return "";
             }
         }
     }

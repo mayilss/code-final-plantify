@@ -31,6 +31,28 @@ namespace PlantifyAPI.Controllers
             await db.SaveChangesAsync();
             return StatusCode(StatusCodes.Status201Created);
         }
+        [HttpGet("{id}")]
+        public IActionResult GetProduct(int id)
+        {
+            var prod = (from product in db.Products
+                        where product.Id == id
+                        select new
+                        {
+                            Id = product.Id,
+                            Name = product.Name,
+                            Image = product.ImageUrl,
+                            Price = product.Price,
+                            Brand = product.Brand.Name,
+                            Category = product.Category.Name,
+                            StockKeepingUnit = product.StockKeepingUnit,
+                            CreatedDate = product.CreatedDate.ToString("MM/dd/yyyy HH:mm:ss"),
+                        });
+            if (prod == null)
+            {
+                return NotFound("No product found with this id!");
+            }
+            return Ok(prod);
+        }
 
         [HttpGet]
         public async Task<IActionResult> GetAllProducts(int? pageSize)
@@ -44,8 +66,11 @@ namespace PlantifyAPI.Controllers
                                       Name = product.Name,
                                       Image = product.ImageUrl,
                                       Price = product.Price,
+                                      CategoryId = product.CategoryId,
+                                      BrandId = product.BrandId,
                                       Category = product.Category.Name,
                                       Brand = product.Brand.Name,
+                                      StockKeepingUnit = product.StockKeepingUnit,
                                   }).ToListAsync();
             return Ok(products.Take(currentPageSize));
         }
@@ -94,7 +119,6 @@ namespace PlantifyAPI.Controllers
             prod.Price = prodObj.Price;
             prod.BrandId = prodObj.BrandId;
             prod.CategoryId = prodObj.CategoryId;
-            prod.StockKeepingUnit = prodObj.StockKeepingUnit;
             await db.SaveChangesAsync();
             return Ok("Product updated successfully!");
         }

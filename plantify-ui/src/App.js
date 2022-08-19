@@ -25,6 +25,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { CartContext, FavoritesContext, SearchContext } from "./contexts";
 import { Categories } from "./pages/Categories";
 import { SearchResults } from "./pages/SearchResults";
+import { Admin } from "./pages/Admin";
 const queryClient = new QueryClient();
 
 const favsFromLocalStorage = JSON.parse(
@@ -96,6 +97,7 @@ function App() {
                                     path="searchresults"
                                     element={<SearchResults />}
                                 />
+                                <Route path="admin" element={<Admin />} />
                             </Routes>
                             <Footer />
                         </div>

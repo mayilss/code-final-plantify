@@ -1,0 +1,54 @@
+@import "../../App.scss";
+
+.table {
+    width: 100%;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    margin-top: 2rem;
+
+    thead,
+    tr:not(:last-child) {
+        border-bottom: 1px solid #c4c4c4;
+    }
+
+    td,
+    th {
+        padding: 2.8rem;
+        font-size: 1.6rem;
+        line-height: 1.9rem;
+    }
+
+    th {
+        font-weight: 700;
+    }
+    .actions {
+        display: flex;
+        align-items: center;
+        column-gap: 1rem;
+        row-gap: 1rem;
+        flex-wrap: wrap;
+    }
+    button {
+        border: none;
+        width: 10rem;
+        border-radius: 10px;
+        font-size: 1.6rem;
+        padding: 1rem 2rem;
+        color: #f0f0f0;
+    }
+    .create {
+        background-color: green;
+    }
+    .edit {
+        background-color: #ffcc00;
+    }
+    .delete {
+        background-color: crimson;
+    }
+    .details {
+        background-color: #0275d8;
+    }
+    img {
+        width: 10rem;
+    }
+}

@@ -1,5 +1,4 @@
-import { useRef, useEffect, useState } from "react";
-// import { CategoryContext } from "../../contexts";
+import { useState } from "react";
 import style from "./index.module.scss";
 
 export const FilterDropdown = (props) => {
@@ -9,7 +8,8 @@ export const FilterDropdown = (props) => {
 
     return (
         <button
-            onClick={() => {
+            onClick={(e) => {
+                e.preventDefault();
                 setButtonActive(!buttonActive);
             }}
             className={style.dropdown}

@@ -60,5 +60,17 @@ namespace PlantifyAPI.Controllers
             await db.SaveChangesAsync();
             return Ok("Category updated successfully!");
         }
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteCategory(int id)
+        {
+            var category = await db.Categories.FindAsync(id);
+            if (category == null)
+            {
+                return NotFound("No product found with this id!");
+            }
+            db.Categories.Remove(category);
+            await db.SaveChangesAsync();
+            return Ok("Category removed successfully!");
+        }
     }
 }
