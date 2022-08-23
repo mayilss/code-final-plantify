@@ -34,7 +34,7 @@ export const SearchResults = () => {
     );
 
     const navigate = useNavigate();
-    if (isLoading2) return <div>Loading</div>;
+    if (isLoading2) return <div></div>;
 
     return (
         <main className="container my-4">

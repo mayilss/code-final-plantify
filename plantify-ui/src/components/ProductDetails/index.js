@@ -34,7 +34,7 @@ export const ProductDetails = (props) => {
         },
     });
 
-    if (isLoading) return <div>Loading</div>;
+    if (isLoading) return <div></div>;
 
     return (
         <div>

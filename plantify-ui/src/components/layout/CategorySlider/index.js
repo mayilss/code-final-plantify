@@ -38,7 +38,7 @@ export const CategorySlider = () => {
         },
     });
 
-    if (isLoading) return <div>Loading</div>;
+    if (isLoading) return <div></div>;
     return (
         <OwlCarousel
             className="owl-theme container carousel-wrapper mt-4"

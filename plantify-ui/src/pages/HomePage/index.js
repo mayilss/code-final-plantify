@@ -29,7 +29,7 @@ export const HomePage = () => {
 
     const navigate = useNavigate();
 
-    if (isLoading) return <div>Loading</div>;
+    // if (isLoading) return <div></div>;
     return (
         <main className="container text-center">
             <Bannerslider />

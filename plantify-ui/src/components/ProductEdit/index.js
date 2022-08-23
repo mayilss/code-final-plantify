@@ -81,7 +81,7 @@ export const ProductEdit = (props) => {
             },
         }
     );
-    if (isLoading && isLoading2) return <div>Loading</div>;
+    if (isLoading && isLoading2) return <div></div>;
 
     return (
         <div>

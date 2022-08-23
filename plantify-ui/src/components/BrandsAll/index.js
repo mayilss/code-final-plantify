@@ -31,7 +31,7 @@ export const BrandsAll = (props) => {
             setBrands(data.data);
         },
     });
-    if (isLoading) return <div>Loading</div>;
+    if (isLoading) return <div></div>;
 
     return (
         <table className={style.table}>

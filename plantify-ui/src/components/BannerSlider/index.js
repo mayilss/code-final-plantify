@@ -6,13 +6,27 @@ import style from "./index.module.scss";
 
 import arrowLeft from "../../icons/arrow-left.svg";
 import arrowRight from "../../icons/arrow-right.svg";
-import Background from "../../images/bannerSlider.png";
+// import Background from "../../images/bannerSlider.png";
 import cardBg from "../../images/front-view-bouquet.png";
 import cardBgb from "../../images/front-view-bouquet-2.png";
 
 import { GreenButton } from "../GreenButton";
+import axios from "axios";
+import { useQuery } from "@tanstack/react-query";
+import { useState } from "react";
 
 export const Bannerslider = () => {
+    const [sliderItems, setSliderItems] = useState([]);
+    const fetchSliderItems = async () => {
+        return await axios(
+            process.env.REACT_APP_API_URL + `/home/bannerslider`
+        );
+    };
+    const { isLoading } = useQuery(["brands4"], fetchSliderItems, {
+        onSuccess: (data) => {
+            setSliderItems(data.data);
+        },
+    });
     return (
         <div className="row gy-4 mt-4">
             <div className="col-md-9 col-12">
@@ -22,7 +36,29 @@ export const Bannerslider = () => {
                     data-bs-ride="carousel"
                 >
                     <div className="carousel-inner">
-                        <div className={`carousel-item slide ${style.banner}`}>
+                        {sliderItems.map((item) => {
+                            return (
+                                <div
+                                    key={item.id}
+                                    className={`carousel-item slide ${
+                                        style.banner
+                                    } ${
+                                        item == sliderItems[0] ? "active" : ""
+                                    }`}
+                                >
+                                    <div className={style.bannerImg}>
+                                        <img src={item.image} alt="banner" />
+                                        <div className={style.bannerContent}>
+                                            <p>{item.content}</p>
+                                            <div className={style.btnHolder}>
+                                                <GreenButton innerText="Show more" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            );
+                        })}
+                        {/* <div className={`carousel-item slide ${style.banner}`}>
                             <div className={style.bannerImg}>
                                 <img src={Background} alt="banner" />
                                 <div className={style.bannerContent}>
@@ -51,7 +87,7 @@ export const Bannerslider = () => {
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                     <button
                         className={`carousel-control-prev ${style.prev}`}
