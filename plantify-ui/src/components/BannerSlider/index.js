@@ -6,7 +6,6 @@ import style from "./index.module.scss";
 
 import arrowLeft from "../../icons/arrow-left.svg";
 import arrowRight from "../../icons/arrow-right.svg";
-// import Background from "../../images/bannerSlider.png";
 import cardBg from "../../images/front-view-bouquet.png";
 import cardBgb from "../../images/front-view-bouquet-2.png";
 
@@ -27,6 +26,7 @@ export const Bannerslider = () => {
             setSliderItems(data.data);
         },
     });
+    if (isLoading) return <div></div>;
     return (
         <div className="row gy-4 mt-4">
             <div className="col-md-9 col-12">
@@ -58,36 +58,6 @@ export const Bannerslider = () => {
                                 </div>
                             );
                         })}
-                        {/* <div className={`carousel-item slide ${style.banner}`}>
-                            <div className={style.bannerImg}>
-                                <img src={Background} alt="banner" />
-                                <div className={style.bannerContent}>
-                                    <p>
-                                        Lorem ipsum dolor sit amet consectetur
-                                        adipisicing elit.
-                                    </p>
-                                    <div className={style.btnHolder}>
-                                        <GreenButton innerText="Show more" />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div
-                            className={`carousel-item slide active ${style.banner}`}
-                        >
-                            <div className={style.bannerImg}>
-                                <img src={Background} alt="banner" />
-                                <div className={style.bannerContent}>
-                                    <p>
-                                        Lorem ipsum dolor sit amet consectetur
-                                        adipisicing elit.
-                                    </p>
-                                    <div className={style.btnHolder}>
-                                        <GreenButton innerText="Show more" />
-                                    </div>
-                                </div>
-                            </div>
-                        </div> */}
                     </div>
                     <button
                         className={`carousel-control-prev ${style.prev}`}

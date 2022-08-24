@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { BannerSliderTab } from "../../components/BannerSliderTab";
 import { BrandsTab } from "../../components/Brands";
 import { CategoriesTab } from "../../components/Categories";
 import { ProductsTab } from "../../components/Products";
@@ -15,14 +16,19 @@ export const Admin = () => {
     const handleProducts = () => {
         setIsActive("Products");
     };
+    const handleBannerSlider = () => {
+        setIsActive("Banner-Slider");
+    };
 
     let tab;
     if (isActive === "Categories") {
         tab = <CategoriesTab />;
     } else if (isActive === "Brands") {
         tab = <BrandsTab />;
-    } else {
+    } else if (isActive === "Products") {
         tab = <ProductsTab />;
+    } else if (isActive === "Banner-Slider") {
+        tab = <BannerSliderTab />;
     }
 
     return (
@@ -65,6 +71,18 @@ export const Admin = () => {
                             }
                         >
                             <p>Products</p>
+                        </button>
+                        <button
+                            onClick={() => {
+                                handleBannerSlider();
+                            }}
+                            className={
+                                isActive === "Banner-Slider"
+                                    ? style.active
+                                    : style.item
+                            }
+                        >
+                            <p>Banner Slider</p>
                         </button>
                     </div>
                 </div>
