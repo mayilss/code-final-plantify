@@ -4,13 +4,13 @@ import style from "./index.module.scss";
 
 import { GreenButton } from "../../GreenButton/index";
 
-export const BannerItem = () => {
+export const BannerItem = (props) => {
     return (
         <div className={style.wrapper}>
             <div className={style.img}>
-                <img src={cBannerBg} alt="banner-bg" />
+                <img src={props.image} alt="banner-bg" />
                 <div className={style.content}>
-                    <p>Müxtəlif növ bitki çeşidləri</p>
+                    <p>{props.content}</p>
                     <div className={style.btnHolder}>
                         <GreenButton innerText="Show more" />
                     </div>

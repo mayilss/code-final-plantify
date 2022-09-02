@@ -28,7 +28,7 @@ export const Cart = () => {
 
     return (
         <main className="container mt-4">
-            <TextContent title="Alış-veriş səbəti" />
+            <TextContent title="Cart" />
             <div className="row my-4">
                 <div className="col-12 col-md-8">
                     <table className={style.table}>
@@ -36,9 +36,9 @@ export const Cart = () => {
                             <tr>
                                 <th></th>
                                 <th></th>
-                                <th>Qiymət</th>
-                                <th>Miqdar</th>
-                                <th>Cəm</th>
+                                <th>Price</th>
+                                <th>Quantity</th>
+                                <th>Total</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -65,7 +65,7 @@ export const Cart = () => {
                             }}
                             className={style.clearBtn}
                         >
-                            Səbəti təmizlə
+                            Empty Cart
                         </button>
                     </div>
                 </div>

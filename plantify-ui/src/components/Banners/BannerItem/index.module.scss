@@ -7,6 +7,11 @@
     width: 100%;
     border-radius: 10px;
 }
+.wrapper,
+.img,
+.img img {
+    height: 44rem;
+}
 
 .img {
     position: relative;
@@ -19,7 +24,7 @@
     background-color: rgba(0, 0, 0, 0.5);
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-end;
     padding: 2rem;
 
     p {
@@ -30,6 +35,6 @@
         text-align: left;
     }
 }
-.btnHolder{
+.btnHolder {
     width: 15rem;
 }

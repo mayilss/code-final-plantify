@@ -21,7 +21,7 @@ export const Bannerslider = () => {
             process.env.REACT_APP_API_URL + `/home/bannerslider`
         );
     };
-    const { isLoading } = useQuery(["brands4"], fetchSliderItems, {
+    const { isLoading } = useQuery(["sliders"], fetchSliderItems, {
         onSuccess: (data) => {
             setSliderItems(data.data);
         },

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { BannersTab } from "../../components/BannersAdmin/BannersTab";
 import { BannerSliderTab } from "../../components/BannerSliderTab";
 import { BrandsTab } from "../../components/Brands";
 import { CategoriesTab } from "../../components/Categories";
@@ -19,16 +20,31 @@ export const Admin = () => {
     const handleBannerSlider = () => {
         setIsActive("Banner-Slider");
     };
+    const handleBottomBanners = () => {
+        setIsActive("BottomBanner");
+    };
 
     let tab;
-    if (isActive === "Categories") {
-        tab = <CategoriesTab />;
-    } else if (isActive === "Brands") {
-        tab = <BrandsTab />;
-    } else if (isActive === "Products") {
-        tab = <ProductsTab />;
-    } else if (isActive === "Banner-Slider") {
-        tab = <BannerSliderTab />;
+    switch (isActive) {
+        case "Categories":
+            tab = <CategoriesTab />;
+            break;
+        case "Brands":
+            tab = <BrandsTab />;
+            break;
+        case "Products":
+            tab = <ProductsTab />;
+            break;
+        case "Banner-Slider":
+            tab = <BannerSliderTab />;
+            break;
+        case "BottomBanner":
+            tab = <BannersTab />;
+            break;
+
+        default:
+            tab = <CategoriesTab />;
+            break;
     }
 
     return (
@@ -83,6 +99,18 @@ export const Admin = () => {
                             }
                         >
                             <p>Banner Slider</p>
+                        </button>
+                        <button
+                            onClick={() => {
+                                handleBottomBanners();
+                            }}
+                            className={
+                                isActive === "BottomBanner"
+                                    ? style.active
+                                    : style.item
+                            }
+                        >
+                            <p>Bottom Banners</p>
                         </button>
                     </div>
                 </div>
